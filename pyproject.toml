@@ -1,0 +1,13 @@
+[project]
+name = "hurricane"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "cfgrib>=0.9.15.1",
+    "fastapi>=0.135.1",
+    "metpy>=1.7.1",
+    "pydantic-settings>=2.13.1",
+    "sqlalchemy>=2.0.48",
+]
