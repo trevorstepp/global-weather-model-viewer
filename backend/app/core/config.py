@@ -7,6 +7,13 @@ class Settings(BaseSettings):
     DEBUG: bool = False
     ALLOWED_ORIGINS: list[str] = []
 
+    @field_validator("ALLOWED_ORIGINS")
+    @classmethod
+    def split_origins(cls, v):
+        if isinstance(v, str):
+            return [origin.strip() for origin in v.split(",")]
+        return v
+
     class Config:
         env_file = ".env"
         env_file_encoding = "utf-8"
